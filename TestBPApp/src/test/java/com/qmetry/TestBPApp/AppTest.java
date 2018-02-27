@@ -157,6 +157,7 @@ public class AppTest extends basics
 			    Thread.sleep(2000L);
 			  
 			    
+			    
 			    driver.findElement(By.xpath("//*[@id='add_to_cart']/button")).click();
 			    Thread.sleep(2000L);
 			    driver.findElement(By.xpath("//a[@title='Proceed to checkout']")).click();
