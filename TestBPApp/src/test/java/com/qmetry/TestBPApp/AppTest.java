@@ -21,7 +21,11 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class AppTest extends basics
 {
+	
+	
 	ExcellReading excellReading;
+
+	//ExcellReading excellReading;
 	// private WebDriver driver;
 	  private String baseUrl;
 	  private boolean acceptNextAlert = true;
