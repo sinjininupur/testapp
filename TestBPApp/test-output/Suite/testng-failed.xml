@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <test name="Test1(failed)" parallel="tests">
+    <parameter name="rowno" value="2"/>
+    <parameter name="sheetname" value="Sheet1"/>
+    <parameter name="browsername" value="chrome"/>
+    <parameter name="deviceName" value="Samsung Galaxy Tab A 10 GoogleAPI Emulator"/>
+    <classes>
+      <class name="com.qmetry.TestBPApp.AppTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="checkappnew" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.qmetry.TestBPApp.AppTest -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [Suite] -->
