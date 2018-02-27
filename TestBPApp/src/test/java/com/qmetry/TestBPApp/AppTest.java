@@ -156,6 +156,7 @@ public class AppTest extends basics
 			    driver.findElement(By.xpath("(//*[@id='center_column']/ul/li/div/div[2]//a[contains(text(),'" +excellReading.getData(sheetname, rowno1, "Item")+ "')])[1]")).click();
 			    Thread.sleep(2000L);
 			  
+			    
 			    driver.findElement(By.xpath("//*[@id='add_to_cart']/button")).click();
 			    Thread.sleep(2000L);
 			    driver.findElement(By.xpath("//a[@title='Proceed to checkout']")).click();
