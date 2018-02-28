@@ -7,7 +7,7 @@
     <!-- <listeners>
 <listener class-name="com.ibm.nestle.farms.utilities.CustomReport"/>
 </listeners> -->
-  <test name="Test1" enabled="true">
+ <!--  <test name="Test1" enabled="true">
      <parameter name="deviceName" value="Samsung Galaxy Tab A 10 GoogleAPI Emulator"/>
    <parameter name="browsername" value="chrome"/>
       <parameter name="sheetname" value="Sheet1"/>
@@ -18,7 +18,7 @@
       <class name="com.qmetry.TestBPApp.AppTest"/>
     </classes>
     
-    </test>
+    </test> -->
     
  
    <test name="Test2_Mobile">
@@ -30,7 +30,7 @@
       <class name="com.qmetry.TestBPApp.AppTest"/>
     </classes>
     </test>
-    <test name="Test3_Browser">
+  <!--   <test name="Test3_Browser">
         <parameter name="deviceName" value="Windows 8.1"/>
    <parameter name="browsername" value="chrome"/>
       <parameter name="sheetname" value="Sheet1"/>
@@ -38,6 +38,6 @@
         <classes>
       <class name="com.qmetry.TestBPApp.AppTest"/>
     </classes>
-    </test>
+    </test> -->
     
 </suite>

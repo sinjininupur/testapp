@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -63,13 +64,14 @@ public class AppTest extends basics
       
 	}*/
 	  @Parameters({"rowno","sheetname"}) 
-	@Test
+	@Test(invocationCount=5,threadPoolSize = 2)
 	public  void checkappnew(String rowno,String sheetname ) throws InterruptedException, IOException {
 		
-		
+		  long start = System.currentTimeMillis();
 		   driver.get(baseUrl + "/index.php");
-		   
-		   
+		   long finish = System.currentTimeMillis();
+		   long totalTime = finish - start; 
+		   System.out.println("Total Time for page load - "+totalTime); 
 		   
 			 //driver.get("http://automationpractice.com/index.php");
 			 
@@ -196,8 +198,22 @@ public class AppTest extends basics
 
 	 
 	@AfterTest
-	  public void tearDown() throws Exception {
+	  public void tearDown(ITestResult result) throws Exception {
+		 driver.executeScript("sauce:job-result=" + (result.isSuccess() ? "passed" : "failed"));
+	       
 	    driver.quit();
+	   // @AfterMethod
+	  //  public void tearDown(ITestResult result) throws Exception {
+	     //   ((JavascriptExecutor) webDriver.get()).executeScript("sauce:job-result=" + (result.isSuccess() ? "passed" : "failed"));
+	     //   webDriver.get().quit();
+	   // }
+
+	   /* protected void annotate(String text) {
+	        ((JavascriptExecutor) webDriver.get()).executeScript("sauce:context=" + text);
+	    }
+	    */
+	    
+	    
 	    String verificationErrorString = verificationErrors.toString();
 	    if (!"".equals(verificationErrorString)) {
 	      Assert.fail(verificationErrorString);
